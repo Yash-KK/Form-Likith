@@ -1,0 +1,32 @@
+-- CreateTable
+CREATE TABLE "VoterDetails" (
+    "id" TEXT NOT NULL,
+    "acno" TEXT NOT NULL,
+    "partNo" TEXT NOT NULL,
+    "sectionNo" TEXT NOT NULL,
+    "sino" TEXT NOT NULL,
+    "houseNo" TEXT NOT NULL,
+    "mainCaste" TEXT NOT NULL,
+    "caste" TEXT NOT NULL,
+    "subCaste" TEXT NOT NULL,
+    "ename" TEXT NOT NULL,
+    "gender" TEXT NOT NULL,
+    "rname" TEXT NOT NULL,
+    "rtype" TEXT NOT NULL,
+    "age" TEXT NOT NULL,
+    "idCardNo" TEXT NOT NULL,
+    "statusType" TEXT NOT NULL,
+    "contactNo" TEXT NOT NULL,
+    "mobile2" TEXT,
+    "relationContact1" TEXT,
+    "relationContact2" TEXT,
+    "address" TEXT NOT NULL,
+    "psName" TEXT NOT NULL,
+    "boothNumber" TEXT NOT NULL,
+    "childAge" TEXT,
+    "voterAccDetails" TEXT,
+    "childGender" TEXT,
+    "party" TEXT NOT NULL,
+
+    CONSTRAINT "VoterDetails_pkey" PRIMARY KEY ("id")
+);
