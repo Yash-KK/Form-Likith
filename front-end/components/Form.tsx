@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import InputField from "./ui/Input";
 import axios from "axios";
 
@@ -51,6 +51,20 @@ const Form = () => {
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Error submitting form. Check the console for details.");
+    }
+  };
+
+  const handleFind = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3000/find-form?acno=${formData.acno}`);
+      if (response.data.success) {
+        setFormData(response.data.formData[0]);
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      console.error("Error fetching form data:", error);
+      alert("Error fetching form data. Check the console for details.");
     }
   };
 
@@ -123,6 +137,13 @@ const Form = () => {
           Submit
         </button>
       </form>
+      <button
+        type="button"
+        onClick={handleFind}
+        className="bg-blue-600 p-4 rounded-full col-span-2 mt-6 text-lg font-semibold transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+      >
+        Find
+      </button>
     </div>
   );
 };
